@@ -1,4 +1,3 @@
-import transformers
 def create_safe_string(full_text,split_idx=50,tokenizer=None):
     """
     将文本在第 split_idx 个 token 附近安全切分，生成 prompt 和 ground_truth。
@@ -43,8 +42,4 @@ def create_safe_string(full_text,split_idx=50,tokenizer=None):
         break
 
     return current_idx
-if __name__=="__main__":
-    tokenizer=transformers.AutoTokenizer.from_pretrained("F:\code\llm\Qwen2.5-0.5B\\")
-    text="这是一个测试文本"*10
-    result=create_safe_string(text,split_idx=5,tokenizer=tokenizer)
 
